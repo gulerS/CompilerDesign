@@ -34,42 +34,42 @@ char output_record[MAX_OUTPUT_RECORD_LENGHT];
 /*   Main												*/
 /*------------------------------------------------------*/
 
-
-main(argc, argv)
-int argc;
-char *argv[]; {
-	TOKEN_CLASS class_;
-	TOKEN_CLASS prev_class;
-	TOKEN_CLASS token_class();
-
-	print_flag = FALSE;
-
-	init_scanner(argv[1]);
-
-
-	prev_class = DELIMITER;
-	recp = output_record;
-	*recp = '\0';
-	record_lenght = 0;
-	do
-	{
-		get_token();
-		if (token == END_OF_FILE) break;
-		class_ = token_class();
-
-
-		if ((prev_class == NONDELIMITER) && (class_ == NONDELIMITER))
-			append_blank();
-		append_token();
-		prev_class = class_;
-
-
-	} while (token != PERIOD);
-
-	if (record_lenght > 0) flush_output_record();
-
-	quit_scanner();
-}
+//
+//main(argc, argv)
+//int argc;
+//char *argv[]; {
+//	TOKEN_CLASS class_;
+//	TOKEN_CLASS prev_class;
+//	TOKEN_CLASS token_class();
+//
+//	print_flag = FALSE;
+//
+//	init_scanner(argv[1]);
+//
+//
+//	prev_class = DELIMITER;
+//	recp = output_record;
+//	*recp = '\0';
+//	record_lenght = 0;
+//	do
+//	{
+//		get_token();
+//		if (token == END_OF_FILE) break;
+//		class_ = token_class();
+//
+//
+//		if ((prev_class == NONDELIMITER) && (class_ == NONDELIMITER))
+//			append_blank();
+//		append_token();
+//		prev_class = class_;
+//
+//
+//	} while (token != PERIOD);
+//
+//	if (record_lenght > 0) flush_output_record();
+//
+//	quit_scanner();
+//}
 
 
 
