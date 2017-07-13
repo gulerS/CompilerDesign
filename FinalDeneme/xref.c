@@ -32,42 +32,42 @@ extern SYMTAB_NODE_PTR symtab_root;
 /*   main												*/
 /*------------------------------------------------------*/
 
-//main(argc, argv)
-//int argc; char *argv[];
-//{
-//	SYMTAB_NODE_PTR np;
-//	LINENUM_HEADER_PTR hp;
-//
-//	init_scanner(argv[1]);
-//
-//	do
-//	{
-//		get_token();
-//		if (token == END_OF_FILE) break;
-//
-//
-//		if (token == IDENTIFIER) {
-//			np = search_symtab(word_string, symtab_root);
-//			if (np == NULL)
-//			{
-//				np = enter_symtab(word_string, &symtab_root);
-//				hp = alloc_struct(LINENUM_HEADER);
-//				hp->first_linenum = hp->last_linenum = NULL;
-//				np->info = (char *)hp;
-//			}
-//			record_line_number(np, line_number);
-//
-//		}
-//
-//
-//	} while (token != PERIOD);
-//	printf("\n\nCross-Reference");
-//	printf("\n----------------------\n");
-//	print_xref(symtab_root);
-//
-//	quit_scanner();
-//
-//}
+main(argc, argv)
+int argc; char *argv[];
+{
+	SYMTAB_NODE_PTR np;
+	LINENUM_HEADER_PTR hp;
+
+	init_scanner(argv[1]);
+
+	do
+	{
+		get_token();
+		if (token == END_OF_FILE) break;
+
+
+		if (token == IDENTIFIER) {
+			np = search_symtab(word_string, symtab_root);
+			if (np == NULL)
+			{
+				np = enter_symtab(word_string, &symtab_root);
+				hp = alloc_struct(LINENUM_HEADER);
+				hp->first_linenum = hp->last_linenum = NULL;
+				np->info = (char *)hp;
+			}
+			record_line_number(np, line_number);
+
+		}
+
+
+	} while (token != PERIOD);
+	printf("\n\nCross-Reference");
+	printf("\n----------------------\n");
+	print_xref(symtab_root);
+
+	quit_scanner();
+
+}
 
 /*------------------------------------------------------*/
 /*   record_line_number									*/
