@@ -1,4 +1,4 @@
-# CompilerDesign
+# Compiler Design
 
 Input pascal File (hello.pas)
 
